@@ -38,13 +38,13 @@ const recordVideoOfSvg = async (filepath, videopath) => {
     const svg = fs.readFileSync(filepath, "utf8");
     await page.setContent(svg);
     const Config = {
-      fps: 25,
+      fps: 60,
     };
 
     const recorder = new PuppeteerScreenRecorder(page, Config);
 
     await recorder.start(videopath);
-    await wait(1700);
+    await wait(4000);
     // await page.waitForTimeout(1);
     await recorder.stop();
   } catch (error) {
@@ -90,4 +90,4 @@ app.get("/video/:filename", (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Server started on port 3000"));
+app.listen(3001, () => console.log("Server started on port 3001"));
