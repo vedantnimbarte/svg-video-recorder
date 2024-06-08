@@ -21,7 +21,7 @@ const upload = multer({ storage: storage });
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 const recordVideoOfSvg = async (filepath, videopath) => {
   const browser = await puppeteer.launch({
