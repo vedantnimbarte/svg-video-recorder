@@ -20,4 +20,4 @@ RUN mkdir -p uploads videos
 EXPOSE 3000
 
 # Run the app
-CMD ["node", "src/server.js"]
+CMD ["node", "server.js"]
